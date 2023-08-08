@@ -1,5 +1,9 @@
 let hash = require('object-hash')
 
+const TargetHash = 156
+
+let Validator = require("./Validator")
+
 class BlockChain {
     constructor() {
 
@@ -17,6 +21,12 @@ class BlockChain {
             timestamp: Date.now(),
             transactions: this.CurrentTransactions,
             prevHash: PrevHash,
+        }
+
+        if(Validator.ProofOfWork() == TargetHash) {
+            // Add it to the instance
+            // Save it on the Database
+            // Console success
         }
 
         // Put Hash
