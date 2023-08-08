@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A Block Chain Network created with Node.js and MongoDB",
   "main": "Index.js",
+  "scripts": {
+    "start": "node Index.js",
+    "dev": "nodemon Index.js"
+   },
   "repository": "https://github.com/AbdulQuayyum/soft-blockchain.git",
   "author": "Abdul-Quayyum",
   "license": "MIT",

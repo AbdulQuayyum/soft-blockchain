@@ -33,7 +33,7 @@ class BlockChain {
     }
 
     LastBlock() {
-        return this.Chain(-1)[0]
+        return this.Chain.slice(-1)[0]
     }
 
     IsEmpty() {
