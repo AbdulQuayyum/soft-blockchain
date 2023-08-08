@@ -1,8 +1,10 @@
+let chalk = require("chalk");
 let hash = require('object-hash')
+let mongoose = require('mongoose')
 
-const TargetHash = 156
-
+let BlockChainModel = mongoose.model("BlockChain")
 let Validator = require("./Validator")
+const TargetHash = 1560
 
 class BlockChain {
     constructor() {
@@ -23,19 +25,23 @@ class BlockChain {
             prevHash: PrevHash,
         }
 
-        if(Validator.ProofOfWork() == TargetHash) {
-            // Add it to the instance
-            // Save it on the Database
-            // Console success
+        if (Validator.ProofOfWork() == TargetHash) {
+            Block.hash = hash(Block)
+            // Add it to the instance Save it on the Database Console success
+            let NewBlock = new BlockChainModel(this.Block)
+            NewBlock.save((err) => {
+                if (err) {
+                    console.log(chalk.red("Canot save Block to Database", err.message))
+                } else {
+                    console.log(chalk.green("Block saved to Database successfully"))
+                }
+            })
+
+            // Add to Chain
+            this.Chain.push(Block)
+            this.CurrentTransactions = []
+            return Block
         }
-
-        // Put Hash
-        this.hash = hash(Block)
-
-        // Add to Chain
-        this.Chain.push(Block)
-        this.CurrentTransactions = []
-        return Block
     }
 
     AddNewTransaction(Sender, Recipient, Amount) {

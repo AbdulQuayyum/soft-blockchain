@@ -6,12 +6,13 @@
   "scripts": {
     "start": "node Index.js",
     "dev": "nodemon Index.js"
-   },
+  },
   "repository": "https://github.com/AbdulQuayyum/soft-blockchain.git",
   "author": "Abdul-Quayyum",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^5.3.0",
+    "chalk": "^2.4.1",
+    "dotenv": "^16.3.1",
     "mongoose": "^7.4.2",
     "object-hash": "^3.0.0"
   }
