@@ -1,7 +1,7 @@
 {
   "name": "soft-blockchain",
   "version": "1.0.0",
-  "description": "fg",
+  "description": "A Block Chain Network created with Node.js and MongoDB",
   "main": "Index.js",
   "repository": "https://github.com/AbdulQuayyum/soft-blockchain.git",
   "author": "Abdul-Quayyum",
