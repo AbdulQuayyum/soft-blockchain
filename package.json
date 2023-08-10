@@ -1,7 +1,7 @@
 {
   "name": "soft-blockchain",
   "version": "1.0.0",
-  "description": "A Block Chain Network created with Node.js and MongoDB",
+  "description": "A Block Chain Network created with Node.js",
   "main": "Index.js",
   "scripts": {
     "start": "node Index.js",
